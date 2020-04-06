@@ -57,9 +57,7 @@ class App extends React.Component {
   clearCompleted = e =>{
     e.preventDefault();
       // if item is completed (item.completed is true) then filter out
-    this.setState({
-      todoItems: this.state.todoItems.filter(item=> !item.completed)
-    });
+    this.setState({todoItems: this.state.todoItems.filter(item=> !item.completed)});
   };
   
   render() {
