@@ -10,13 +10,13 @@ class TodoForm extends React.Component{
 
 
     handleChanges = e =>{
-        this.setState ({ [e.target.task]: e.target.value})
+        this.setState ({ [e.target.name]: e.target.value})
     };
 
     submitItem = e =>{
-        e.preventDefault(); 
+        e.preventDefault();
         this.setState({ item: '' });
-        this.props.addItem(e, this.state.item);
+        this.props.addTodoItem(e, this.state.item);
       };
     
 
