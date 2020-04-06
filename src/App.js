@@ -4,7 +4,7 @@ import Todoform from './components/TodoForm';
 // import '.components/Todo.css';
 
 
-const items = [
+const todoItems = [
   {
       task: 'Clean bathroom',
       id: 1,
@@ -32,7 +32,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state ={
-      items  // same as === items: items
+      todoItems  // same as === items: items
     };
   }
   // design `App` to be the parent component of your application.
