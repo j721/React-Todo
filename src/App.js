@@ -1,55 +1,38 @@
 import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
-// import '.components/Todo.css';
+import './components/Todo.css'
 
 
 const todoItems = [
   {
-      task: 'Clean bathroom',
-      id: 1,
-      completed: false
-  },
-  {
-      task: 'Clean kitchen',
-      id: 2,
-      completed: false
-  },
-  {
-      task: 'Clean bedroom',
-      id: 3,
-      completed: false
-  },
-  {
-      task: 'Clean out closet',
-      id: 4,
-      completed: false
-  },
-]
+    task: 'Clean bathroom',
+    id: 1,
+    completed: false
+  }
+];
 
 class App extends React.Component {
+  // design `App` to be the parent component of your application.
+  // this component is going to take care of state, and any change handlers you need to work with your state
   // you will need a place to store your state in this component.
   constructor(){
     super();
     this.state ={
-      todoItems  // same as === items: items
+      todoItems: todoItems
     };
   }
-
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
-
 
   //Adding todoItem to todoList
   addTodoItem =(e,item)=>{
     e.preventDefault();
-    const newTodoItem ={
-      task: item, 
+    const newItem ={
+      name: item, 
       id: Date.now(),
-      purchased: false 
+      completed: false 
     };
     this.setState({
-      todoItems: [...this.state.todoItems, newTodoItem]
+      todoItems: [...this.state.todoItems, newItem]
     });
   }
 
@@ -59,7 +42,7 @@ class App extends React.Component {
      todoItems: this.state.todoItems.map(item=>{
        // if the item matches the id that was clicked
        if (itemId === item.id) {
-        // change purchased to true
+        // change completed to true
         // return the item
          return{
          ...item, 
@@ -70,8 +53,8 @@ class App extends React.Component {
         // just return the item, unchanged
        return item; 
      })
-   })
-  }
+   });
+  };
 
   clearCompleted = e =>{
     e.preventDefault();
