@@ -17,12 +17,12 @@ const todoItems = [
   },
   {
       task: 'Clean bedroom',
-      id: 1,
+      id: 3,
       completed: false
   },
   {
       task: 'Clean out closet',
-      id: 1,
+      id: 4,
       completed: false
   },
 ]
@@ -35,12 +35,12 @@ class App extends React.Component {
       todoItems  // same as === items: items
     };
   }
+
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
 
-  //class methods to update state
 
-  //Add a single todoItem into todoList
+  //Adding todoItem to todoList
   addTodoItem =(e,item)=>{
     e.preventDefault();
     const newTodoItem ={
@@ -53,6 +53,7 @@ class App extends React.Component {
     });
   }
 
+  //Toggle to change task completed from false to true
   toggleItem = itemId =>{
    this.setState({
      todoItems: this.state.todoItems.map(item=>{
@@ -65,17 +66,34 @@ class App extends React.Component {
          completed: !item.completed
         };
        }
+         // if the item does NOT match the id that was clicked
+        // just return the item, unchanged
        return item; 
      })
    })
-;  }
+  }
 
+  clearCompleted = e =>{
+    e.preventDefault();
+      // if item is completed (item.completed is true) then filter out
+    this.setState({
+      todoItems: this.state.todoItems.filter(item=> !item.completed)
+    });
+  };
   
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-      </div>
+      <div className ="App">
+        <div className ="header">
+        <h2>Todo List</h2>
+        <TodoForm addTodoItem ={this.addTodoItem}/>
+        </div>
+      <TodoList
+        todoItems ={this.state.todoItems}
+        toggleItem ={this.toggleItem}
+        clearCompleted ={this.clearCompleted}
+        />
+        </div>
     );
   }
 }
