@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-image: 
+    url("https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+ 
+}
+
+h2{
+    color: black; 
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.6;
+}
+p,span {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.todo-list{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4%;
+}
+
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0 36px;
+  max-width: 665px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.item {
+  background-color: #9489cea3;;
+  width: 33%;
+    height: 7vh;
+  text-align: center;
+  margin-bottom: 3%;
+  padding-top: 0.3%;
+  border-radius: 1em; 
+  cursor: pointer;
+}
+
+.item.completed {
+  background-color: #9489cea3;
+  text-decoration: line-through;
+}
+form {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+form > input {
+  background-color:white;
+  border: 0;
+  border-radius: 0.5em;
+  padding: 6px 0;
+  font-size: 1rem;
+  width: 31vw;
+  height: 5vh;
+  outline: 0;
+  color: #4c4aa5;;
+  margin-right: 8px;
+  margin-left: 8%;
+}
+
+button {
+  background-color: #95abea;;
+  border: 1px solid #95abea;;
+  color: white;
+  font-size: 16px;
+  padding: 6px 14px;
+  height: 5vh;
+  border-radius: 0.8em;
+  opacity: 0.95;
+}
+
+input::placeholder {
+  color: #95abea;;
+  opacity: 1;
+}
+
+.clear-btn {
+  margin-top: 16px;
+}
