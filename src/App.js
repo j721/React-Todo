@@ -9,6 +9,16 @@ const todoItems = [
     task: 'Clean bathroom',
     id: 1528817077286,
     completed: false
+  },
+  {
+    task: 'Clean house',
+    id: 1528817077286,
+    completed: false
+  },
+  {
+    task: 'Clean garden',
+    id: 1528817077286,
+    completed: false
   }
 ];
 
