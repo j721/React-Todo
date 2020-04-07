@@ -7,7 +7,7 @@ import './components/Todo.css'
 const todoItems = [
   {
     task: 'Clean bathroom',
-    id: 1,
+    id: 1528817077286,
     completed: false
   }
 ];
